@@ -1,5 +1,6 @@
 let proxyObj = {};
 const CompressionPlugin = require("compression-webpack-plugin");
+//这里必须跟后端一样是8081 否则会进不去
 proxyObj['/ws'] = {
     ws: true,
     target: "ws://localhost:8081"
