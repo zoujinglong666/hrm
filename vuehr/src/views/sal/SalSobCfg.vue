@@ -68,7 +68,7 @@
                     <template slot-scope="scope">
                         <el-popover
                                 placement="left"
-                                title="修改工资账套"
+                                title="1111111111111修改工资账套"
                                 @show="showPop(scope.row.salary)"
                                 @hide="hidePop(scope.row)"
                                 width="200"
