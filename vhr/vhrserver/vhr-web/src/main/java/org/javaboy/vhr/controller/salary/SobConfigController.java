@@ -1,6 +1,5 @@
 package org.javaboy.vhr.controller.salary;
 
-import org.javaboy.vhr.model.Employee;
 import org.javaboy.vhr.model.RespBean;
 import org.javaboy.vhr.model.RespPageBean;
 import org.javaboy.vhr.model.Salary;
@@ -31,6 +30,8 @@ public class SobConfigController {
 
     @PutMapping("/")
     public RespBean updateEmployeeSalaryById(Integer eid, Integer sid) {
+
+
         Integer result = employeeService.updateEmployeeSalaryById(eid, sid);
         if (result == 1 || result == 2) {
             return RespBean.ok("更新成功");

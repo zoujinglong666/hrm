@@ -35,7 +35,7 @@ public class JobLevel implements Serializable {
 
         this.name = name;
     }
-
+//时间格式化
     @JsonFormat(pattern = "yyyy-MM-dd",timezone = "Asia/Shanghai")
     private Date createDate;
 

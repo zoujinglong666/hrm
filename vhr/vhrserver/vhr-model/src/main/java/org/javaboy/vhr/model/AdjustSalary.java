@@ -1,11 +1,9 @@
 package org.javaboy.vhr.model;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import java.io.Serializable;
 import java.util.Date;
 
-public class AdjustSalary {
+public class AdjustSalary implements Serializable {
     private Integer id;
 
     private Integer eid;
@@ -19,6 +17,8 @@ public class AdjustSalary {
     private String reason;
 
     private String remark;
+
+
 
     public Integer getId() {
         return id;

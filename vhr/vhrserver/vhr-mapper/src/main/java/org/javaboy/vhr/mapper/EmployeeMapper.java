@@ -7,29 +7,32 @@ import java.util.Date;
 import java.util.List;
 
 public interface EmployeeMapper {
-    int deleteByPrimaryKey(Integer id);
+	//删除只需要创一个id
+	int deleteByPrimaryKey(Integer id);
 
-    int insert(Employee record);
+	int insert(Employee record);
 
-    int insertSelective(Employee record);
+	int insertSelective(Employee record);
 
-    Employee selectByPrimaryKey(Integer id);
+	Employee selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(Employee record);
+	int updateByPrimaryKeySelective(Employee record);
 
-    int updateByPrimaryKey(Employee record);
+	int updateByPrimaryKey(Employee record);
 
-    List<Employee> getEmployeeByPage(@Param("page") Integer page, @Param("size") Integer size, @Param("emp") Employee employee,@Param("beginDateScope") Date[] beginDateScope);
+	List<Employee> getEmployeeByPage(@Param("page") Integer page, @Param("size") Integer size, @Param("emp") Employee employee, @Param("beginDateScope") Date[] beginDateScope);
 
-    Long getTotal(@Param("emp") Employee employee,@Param("beginDateScope") Date[] beginDateScope);
+	Long getTotal(@Param("emp") Employee employee, @Param("beginDateScope") Date[] beginDateScope);
 
-    Integer maxWorkID();
+	Integer maxWorkID();
 
-    Integer addEmps(@Param("list") List<Employee> list);
+	Integer addEmps(@Param("list") List<Employee> list);
 
-    Employee getEmployeeById(Integer id);
+	Employee getEmployeeById(Integer id);
 
-    List<Employee> getEmployeeByPageWithSalary(@Param("page") Integer page, @Param("size") Integer size);
+	List<Employee> getEmployeeByPageWithSalary(@Param("page") Integer page, @Param("size") Integer size);
 
-    Integer updateEmployeeSalaryById(@Param("eid") Integer eid, @Param("sid") Integer sid);
+	Integer updateEmployeeSalaryById(@Param("eid") Integer eid, @Param("sid") Integer sid);
+
+//	List<Employee> getEmployeeWithEmployeesMobilizeService(Integer currentPage, Integer size);
 }

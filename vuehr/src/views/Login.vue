@@ -46,11 +46,7 @@
           style="cursor: pointer"
         />
       </el-form-item>
-      <el-checkbox
-        size="normal"
-        class="loginRemember"
-        v-model="checked"
-      ></el-checkbox>
+
       <el-button
         size="normal"
         type="primary"
@@ -74,7 +70,6 @@ export default {
         password: "123456",
         code: "",
       },
-      checked: true,
       rules: {
         username: [
           { required: true, message: "请输入用户名", trigger: "blur" },
@@ -95,6 +90,7 @@ export default {
           this.postRequest("/doLogin", this.loginForm).then((resp) => {
             this.loading = false;
             if (resp) {
+              console.log(resp.obj)
               this.$store.commit("INIT_CURRENTHR", resp.obj);
               window.sessionStorage.setItem("user", JSON.stringify(resp.obj));
               let path = this.$route.query.redirect;
@@ -102,7 +98,7 @@ export default {
                 path == "/" || path == undefined ? "/home" : path
               );
             } else {
-              this.vcUrl = "/verifyCode?time=" + new Date();
+              this.updateVerifyCode();
             }
           });
         } else {

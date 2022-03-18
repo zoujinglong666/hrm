@@ -19,6 +19,9 @@
     from employeeremove
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="getEmployeeremoveList" resultMap="BaseResultMap">
+    select * from Employeeremove;
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from employeeremove
     where id = #{id,jdbcType=INTEGER}
